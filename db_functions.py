@@ -1,3 +1,6 @@
+import json
+
+
 def add_record(metadata, data):
     """Takes list of dict named metadata(conatin data about the data) and
     list of dict named data(containing the actual data) and retrives field
@@ -99,9 +102,7 @@ def del_record(metadata, data):
     ):  # because the empty list/string/tuple/dict return false or evaluate on false
         print("No records to delete.")
     else:
-        record_index = input(
-            "Enter the record number to delete (or press Enter to cancel): "
-        )
+        record_index = input("Enter the record number to delete (or press Enter to cancel):")
         if record_index.isdigit():
             # because user counting start from  one while indexing is python start from 0
             record_index = int(record_index) - 1
@@ -228,3 +229,34 @@ def display_all_databases(databases):
     print("Avaliable DataBases are :")
     for index, database in enumerate(databases, start=1):
         print(f"{index}:{database}")
+
+
+def load_databases():
+    try:
+        with open("DATABASES.txt") as f:
+            databases = f.readlines()
+            databases = [database.strip() for database in databases]
+
+    except FileNotFoundError:
+        databases = []
+
+    return databases
+
+
+def load_data(database_name):
+
+    with open(f"{database_name}_metadata.json") as f:
+        metadata = json.load(f)
+
+    try:
+        with open(f"{database_name}.json") as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        data = []
+
+    return metadata, data
+
+
+def save_data(database_name, data):
+    with open(f"{database_name}.json", "w") as f:
+        json.dump(data, f)
