@@ -32,14 +32,14 @@ combo_box.configure(
     borderwidth=2,  # Width of the border
 )
 
-hero = PhotoImage(file="/home/cyxabima/Documents/dbms_resources/database.png")
-hero_min = PhotoImage(file="/home/cyxabima/cs/cep-group-new/hero_min_.png")
-img1 = PhotoImage(file="/home/cyxabima/Documents/dbms_resources/img-add.png")
-img2 = PhotoImage(file="/home/cyxabima/Documents/dbms_resources/img-edit.png")
-img3 = PhotoImage(file="/home/cyxabima/Documents/dbms_resources/img-delete.png")
-img4 = PhotoImage(file="/home/cyxabima/Documents/dbms_resources/img-view.png")
-img5 = PhotoImage(file="/home/cyxabima/Documents/dbms_resources/img-search.png")
-img6 = PhotoImage(file="/home/cyxabima/Documents/dbms_resources/img-back.png")
+hero = PhotoImage(file="./dbms_resources/database.png")
+hero_min = PhotoImage(file="./hero_min_.png")
+img1 = PhotoImage(file="./dbms_resources/img-add.png")
+img2 = PhotoImage(file="./dbms_resources/img-edit.png")
+img3 = PhotoImage(file="./dbms_resources/img-delete.png")
+img4 = PhotoImage(file="./dbms_resources/img-view.png")
+img5 = PhotoImage(file="./dbms_resources/img-search.png")
+img6 = PhotoImage(file="./dbms_resources/img-back.png")
 
 root.title("DATABASE MANAGEMENT SYSTEM")
 root.geometry("1280x832")
